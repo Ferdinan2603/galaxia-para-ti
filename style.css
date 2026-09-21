@@ -1,0 +1,357 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #020208;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Estilo para el texto central elegante */
+.texto-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    color: #ffeb3b;
+    text-shadow: 0 0 20px rgba(255, 235, 59, 0.9), 0 0 40px rgba(255, 153, 0, 0.6);
+    pointer-events: none;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#webgl-container {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+/* Estilos del Modal */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 10;
+}
+.modal-contenido {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+
+    width: 85%;
+    max-width: 500px;
+    max-height: 90vh;
+
+    box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+
+    position: relative;
+    border: 1px solid #ffeb3b;
+
+    box-sizing: border-box;
+}
+
+.modal-contenido img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.modal-contenido p { font-size: 1.2rem; color: #fff; margin: 0; }
+#cerrar {
+    position: absolute; top: 10px; right: 15px; font-size: 1.5rem;
+    color: #aaa; cursor: pointer;
+}
+#cerrar:hover { color: #fff; }
+.oculto { display: none; }
+@media (max-width: 600px) {
+
+    .modal-contenido {
+        width: 92%;
+        max-width: none;
+        padding: 15px;
+        max-height: 92vh;
+    }
+
+    .modal-contenido img {
+        max-height: 72vh;
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-contenido p {
+        font-size: 1.1rem;
+    }
+
+    #cerrar {
+        top: 8px;
+        right: 12px;
+        font-size: 1.8rem;
+    }
+}
+#boton-musica {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+
+    padding: 12px 18px;
+    border: 1px solid #ffeb3b;
+    border-radius: 25px;
+
+    background: rgba(20, 20, 40, 0.8);
+    color: #ffeb3b;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+}
+
+#boton-musica:hover {
+    background: rgba(255, 235, 59, 0.2);
+}
+/* =========================================
+   CARTA DE AMOR DE INICIO
+========================================= */
+
+#carta-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 25, 50, 0.96),
+            rgba(2, 2, 8, 0.99)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+/* Carta */
+
+.carta-contenido {
+    width: 85%;
+    max-width: 550px;
+
+    padding: 45px 40px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 30, 55, 0.97),
+            rgba(15, 15, 30, 0.97)
+        );
+
+    border: 1px solid rgba(255, 235, 59, 0.6);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(255, 235, 59, 0.15),
+        0 0 80px rgba(255, 180, 0, 0.08);
+
+    animation: aparecerCarta 1.5s ease;
+}
+
+/* Corazón */
+
+.corazon-carta {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(255, 220, 50, 0.8)
+        );
+
+    animation: latidoCarta 2s infinite;
+}
+
+/* Título */
+
+.carta-contenido h1 {
+    margin: 5px 0 15px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 3rem;
+
+    font-weight: normal;
+
+    color: #ffeb3b;
+
+    text-shadow:
+        0 0 10px rgba(255, 235, 59, 0.7),
+        0 0 25px rgba(255, 180, 0, 0.4);
+}
+
+/* Línea */
+
+.linea-carta {
+    width: 80px;
+    height: 1px;
+
+    margin: 0 auto 25px;
+
+    background: #ffeb3b;
+
+    box-shadow:
+        0 0 10px rgba(255, 235, 59, 0.8);
+}
+
+/* Texto */
+
+.carta-contenido p {
+    color: rgba(255, 255, 255, 0.88);
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin: 15px 0;
+}
+
+/* Firma */
+
+.firma-carta {
+    margin-top: 25px;
+
+    color: #ffeb3b;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 28px;
+}
+
+/* Botón */
+
+#boton-ok {
+    margin-top: 30px;
+
+    padding: 12px 38px;
+
+    border: 1px solid #ffeb3b;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 235, 59, 0.08);
+
+    color: #ffeb3b;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#boton-ok:hover {
+    transform: scale(1.08);
+
+    background:
+        rgba(255, 235, 59, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(255, 235, 59, 0.5);
+}
+
+/* Desaparecer */
+
+#carta-inicio.ocultar-carta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Animaciones */
+
+@keyframes aparecerCarta {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+@keyframes latidoCarta {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+/* Adaptación para celular */
+
+@media (max-width: 600px) {
+
+    .carta-contenido {
+        width: 90%;
+        padding: 35px 25px;
+    }
+
+    .corazon-carta {
+        font-size: 45px;
+    }
+
+    .carta-contenido h1 {
+        font-size: 2.5rem;
+    }
+
+    .carta-contenido p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .firma-carta {
+        font-size: 25px;
+    }
+
+}

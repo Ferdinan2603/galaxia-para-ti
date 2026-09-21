@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Para Ti GABRIELA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente elegante de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- CARTA DE AMOR DE INICIO -->
+<div id="carta-inicio">
+
+    <div class="carta-contenido">
+
+        <div class="corazon-carta">💛</div>
+
+        <h1>Para ti, mi amor</h1>
+
+        <div class="linea-carta"></div>
+
+        <p>
+            Hay momentos que quisiera guardar para siempre,
+            y tú eres uno de ellos.
+        </p>
+
+        <p>
+            Esta pequeño detalle lo hice pensando en ti,
+            en todo lo que hemos vivido y hoy en esta fecha 
+            memorial queria que te sientas feliz, te quiero
+             mucho  mi vida no lo olvides nunca.
+        </p>
+
+        <p>
+            Espero que cada detalle 
+            te recuerde lo mucho que te amo GABRIELA. ❤️
+        </p>
+
+        <div class="firma-carta">
+            Con todo mi amor 💛
+        </div>
+
+        <button id="boton-ok">OK ❤️</button>
+
+    </div>
+
+</div>
+
+       <!-- Música romántica -->
+<audio id="musica" loop>
+   <source src="musica/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button id="boton-musica">🎵 Reproducir canción</button>
+
+    <!-- Contenedor 3D -->
+    <div id="webgl-container"></div>
+
+    <!-- Modal para las flores -->
+    <div id="modal" class="modal oculto">
+        <div class="modal-contenido">
+            <span id="cerrar">&times;</span>
+            <img id="modal-img" src="" alt="Sorpresa">
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+
+    <!-- Librerías de Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meshoptimizer@0.20.0/meshopt_decoder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
