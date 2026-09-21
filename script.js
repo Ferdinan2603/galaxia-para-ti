@@ -647,3 +647,35 @@ botonOK.addEventListener('click', () => {
     cartaInicio.classList.add('ocultar-carta');
 
 });
+// ==========================================
+// TOQUE EN CELULAR PARA SELECCIONAR FLORES
+// ==========================================
+
+renderer.domElement.addEventListener(
+    "touchend",
+    function (event) {
+
+        // Evita que el toque genere otro clic automáticamente
+        event.preventDefault();
+
+        if (event.changedTouches.length === 0) {
+            return;
+        }
+
+        const touch = event.changedTouches[0];
+
+        // Convertimos el toque en un clic
+        const clicCelular = new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+
+        // Enviamos el clic al canvas de Three.js
+        renderer.domElement.dispatchEvent(clicCelular);
+    },
+    {
+        passive: false
+    }
+);
